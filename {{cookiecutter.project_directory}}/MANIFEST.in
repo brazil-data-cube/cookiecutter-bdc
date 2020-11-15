@@ -1,0 +1,19 @@
+{% include 'template/header.txt' -%}
+
+exclude docs/sphinx/_build
+include *.py
+include *.rst
+include *.sh
+include LICENSE
+include pytest.ini
+recursive-exclude docs/sphinx/_build *
+recursive-include {{ cookiecutter.package_name }} *.py
+recursive-include docs/sphinx *.bat
+recursive-include docs/sphinx *.css
+recursive-include docs/sphinx *.ico
+recursive-include docs/sphinx *.png
+recursive-include docs/sphinx *.py
+recursive-include docs/sphinx *.rst
+recursive-include docs/sphinx Makefile
+recursive-include examples *.py
+recursive-include tests *.py

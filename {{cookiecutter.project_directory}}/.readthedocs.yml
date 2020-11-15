@@ -1,0 +1,17 @@
+{% include 'template/header.txt' -%}
+
+version: 2
+
+sphinx:
+    configuration: docs/sphinx/conf.py
+
+formats: []
+
+python:
+    version: 3.7
+
+    install:
+        - method: pip
+          path: .
+          extra_requirements:
+              - docs
