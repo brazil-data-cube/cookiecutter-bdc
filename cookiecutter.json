@@ -1,7 +1,7 @@
 {
     "project_name": "wtss.py",
     "project_title": "Python Client Library for WTSS",
-    "project_description": "Web Time Series Service (WTSS) is a lightweight web service for handling time series data from remote sensing imagery. Given a location and a time interval you can retrieve the according time series as a list of real values.",
+    "project_description": "A client library in Python for the Web Time Series Service (WTSS).",
     "project_directory": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
     "github_repository": "brazil-data-cube/{{ cookiecutter.project_directory }}",
     "package_name": "{{ cookiecutter.project_directory | replace('-', '_') | replace('.py' , '') }}",
