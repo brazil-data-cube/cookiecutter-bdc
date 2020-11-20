@@ -27,6 +27,26 @@ echo "OK!"
 
 
 #
+# Some files are specific to a project flavour
+#
+echo -n "Removing unused files for flavour {{ cookiecutter.project_flavour }}... "
+
+{%- if cookiecutter.project_flavour == 'Library' %}
+rm docs/sphinx/class_{{cookiecutter.package_name}}.rst
+{%- endif %}
+
+{%- if cookiecutter.project_flavour != 'Client Web Service' %}
+rm {{cookiecutter.package_name}}/{{cookiecutter.package_name}}.py
+{%- endif %}
+
+{%- if cookiecutter.project_flavour != 'Flask Web Service' %}
+rm {{cookiecutter.package_name}}/ext.py
+{%- endif %}
+
+echo "OK!"
+
+
+#
 # If Travis CI is not used, remove its hook file.
 #
 {%- if cookiecutter.use_travis != 'y' %}
@@ -44,6 +64,7 @@ echo -n "Not using Travis CI... "
 rm .readthedocs.yml
 echo "OK!"
 {%- endif %}
+
 
 echo ""
 echo "pos-processing finished!"

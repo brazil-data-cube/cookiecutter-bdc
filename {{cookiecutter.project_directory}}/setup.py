@@ -44,8 +44,20 @@ setup_requires = [
 
 install_requires = [
     'Click>=7.0',
+    {%- if cookiecutter.project_flavour == 'Client Web Service' %}
     'jsonschema>=3.2',
     'requests>=2.20',
+    {%- endif %}
+
+    {%- if cookiecutter.project_flavour == 'Flask Web Service' %}
+    'Flask>=1.1.1',
+    'Flask-SQLAlchemy>=2.4',
+    'SQLAlchemy>=1.3.11',
+    'psycopg2-binary>=2.8',
+    'python-logstash-async>=1.6,<2',
+    'python-json-logger>=0.1,<1',
+    'bdc-auth-client @ git+https://github.com/brazil-data-cube/bdc-auth-client',
+    {%- endif %}
 ]
 
 packages = find_packages()
