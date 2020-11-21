@@ -1,4 +1,5 @@
 {
+    "project_flavour": ["Client Web Service", "Flask Web Service", "Library"],
     "project_name": "wtss.py",
     "project_title": "Python Client Library for WTSS",
     "project_description": "A client library in Python for the Web Time Series Service (WTSS).",

@@ -7,8 +7,10 @@
 .. automodule:: {{ cookiecutter.package_name }}.{{ cookiecutter.package_name }}
 
 
+{%- if cookiecutter.project_flavour != 'Library' %}
 .. toctree::
     :maxdepth: 1
     :caption: Classes:
 
     class_{{ cookiecutter.package_name }}
+{%- endif %}
