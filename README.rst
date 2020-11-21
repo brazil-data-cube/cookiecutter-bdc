@@ -64,6 +64,10 @@ Using the Template
 
     cookiecutter https://github.com/brazil-data-cube/cookiecutter-bdc
 
+    or,
+
+    cookiecutter gh:brazil-data-cube/cookiecutter-bdc
+
 
 .. note::
 
@@ -81,6 +85,8 @@ Using the Template
 
 
 **4.** You will be prompted for some information regarding your new package:
+
+- **project_flavour:**  The intended type of Python package.
 
 - **project_name:** A short title, preferable in lower case with hyphenated characters (project name for machines).
 
@@ -107,11 +113,17 @@ Using the Template
 
 Some of the information above can be filled with default values::
 
-    project_name [wtss.py]: WLTS
-    project_title [Python Client Library for WTSS]: Python Cliente Library for Web Land Trajectory Service
-    project_description [A client library in Python for the Web Time Series Service (WTSS).]: Python Cliente Library for Web Land Trajectory Service is ...
-    project_directory [wlts]:
-    github_repository [brazil-data-cube/wlts]:
+    project_flavour:
+        Select project_flavour:
+        1 - Client Web Service
+        2 - Flask Web Service
+        3 - Library
+        Choose from 1, 2, 3 [1]:
+    project_name [wtss.py]: wlts.py
+    project_title [Python Client Library for WTSS]: Python Client Library for Web Land Trajectory Service
+    project_description [A client library in Python for the Web Time Series Service (WTSS)]: Web Land Trajectory Service is ...
+    project_directory [wlts.py]:
+    github_repository [brazil-data-cube/wlts.py]:
     package_name [wlts]:
     initial_version [0.1.0]:
     copyright_year [2020]:
@@ -120,11 +132,13 @@ Some of the information above can be filled with default values::
     use_pypi [y]:
 
 
-**5.** The project will be created under the folder indicated by the ``project_directory`` entry. In the above example, the ``wlts`` directory will contain the following files and subfolders::
+**5.** The project will be created under the folder indicated by the ``project_directory`` entry. In the above example, the ``wlts.py`` directory will contain the following files and subfolders::
 
-    CHANGES.rst
     docs
     examples
+    tests
+    wlts
+    CHANGES.rst
     LICENSE
     MANIFEST.in
     pytest.ini
@@ -132,9 +146,71 @@ Some of the information above can be filled with default values::
     run-tests.sh
     setup.cfg
     setup.py
-    tests
-    wlts
 
+
+.. note::
+
+    Sometimes it is useful to have a user config file to keep some basic settings. For instance, you could create a file name ``my-config.yaml`` with the folowwing content:
+
+
+    .. code-block:: yaml
+        :caption: A user config file named ``my-config.yaml``.
+        :linenos:
+
+        default_context:
+            project_flavour: "Client Web Service"
+            initial_version: "1.0.0"
+        abbreviations:
+            bdc: https://github.com/brazil-data-cube/cookiecutter-bdc.git
+            gh: https://github.com/{0}.git
+
+
+    Then, you could call ``cookiecutter`` as::
+
+        cookiecutter --config-file my-config.yaml bdc
+
+
+Create a Git Repository
+=======================
+
+
+After creating the source tree of your new package, you can initialize a Git repository in it with the ``git init`` command::
+
+    cd wlts.py
+
+    git init
+
+
+Configure the user ``name`` and ``email``::
+
+    git config user.name <user-name>
+    git config user.email <user-email>
+
+
+Add the source files in the tree with ``git add``::
+
+    git add .
+
+
+Record changes to the repository with ``git commit``::
+
+    git commit -m "Prepare wlts.py package."
+
+
+If you do not have a GitHub repository yet, create a new empty one under the `Brazil Data Cube organization <https://github.com/brazil-data-cube>`_. Let's assume you have created one named `brazil-data-cube/wlts.py <https://github.com/brazil-data-cube/wlts.py>`_. Add the remote address with ``git remote``::
+
+    git remote add origin https://github.com/brazil-data-cube/wlts.py.git
+
+
+And finally, push your local copy to the remote::
+
+    git push origin master
+
+
+Congratulations! You should have the structure of your new package in GitHub!
+
+
+.. _readme_license:
 
 License
 =======
