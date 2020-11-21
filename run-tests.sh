@@ -7,8 +7,8 @@
 # under the terms of the MIT License; see LICENSE file for more details.
 #
 
-pydocstyle examples tests setup.py version.py && \
-isort setup.py version.py --check-only --diff && \
+pydocstyle tests setup.py version.py && \
+isort setup.py version.py tests --check-only --diff && \
 check-manifest --ignore ".travis-*" --ignore ".readthedocs.*" && \
 sphinx-build -qnW --color -b doctest docs/sphinx/ docs/sphinx/_build/doctest #&& \
-#pytest
+pytest
