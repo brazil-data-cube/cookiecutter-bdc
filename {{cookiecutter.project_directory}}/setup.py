@@ -78,6 +78,11 @@ setup(
     author='Brazil Data Cube Team',
     author_email='brazildatacube@inpe.br',
     url='https://github.com/{{ cookiecutter.github_repository }}',
+    project_urls={
+        'Repository': 'https://github.com/{{ cookiecutter.github_repository }}',
+        'Issues': 'https://github.com/{{ cookiecutter.github_repository }}/issues',
+        'Documentation': 'https://{{ cookiecutter.package_name }}.readthedocs.io/en/latest/'
+    },
     packages=packages,
     zip_safe=False,
     include_package_data=True,

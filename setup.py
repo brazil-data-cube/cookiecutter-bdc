@@ -66,6 +66,11 @@ setup(
     author='Brazil Data Cube Team',
     author_email='brazildatacube@inpe.br',
     url='https://github.com/brazil-data-cube/cookiecutter-bdc',
+    project_urls={
+        'Repository': 'https://github.com/brazil-data-cube/cookiecutter-bdc',
+        'Issues': 'https://github.com/brazil-data-cube/cookiecutter-bdc/issues',
+        'Documentation': 'https://cookiecutter-bdc.readthedocs.io/en/latest/'
+    },
     packages=packages,
     zip_safe=False,
     include_package_data=True,
