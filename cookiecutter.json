@@ -2,7 +2,7 @@
     "project_flavour": ["Client Web Service", "Flask Web Service", "Library"],
     "project_name": "wtss.py",
     "project_title": "Python Client Library for WTSS",
-    "project_description": "A client library in Python for the Web Time Series Service (WTSS).",
+    "project_description": "A client library in Python for the Web Time Series Service (WTSS)",
     "project_directory": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
     "github_repository": "brazil-data-cube/{{ cookiecutter.project_directory }}",
     "package_name": "{{ cookiecutter.project_directory | replace('-', '_') | replace('.py' , '') }}",
