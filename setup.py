@@ -22,6 +22,7 @@ docs_require = [
 
 tests_require = [
     'pytest>=5.2',
+    'pytest-cookies>=0.5',
     'pytest-pep8>=1.0',
     'pydocstyle>=4.0',
     'isort>4.3',
