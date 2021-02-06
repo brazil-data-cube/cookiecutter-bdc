@@ -8,7 +8,8 @@
     "package_name": "{{ cookiecutter.project_directory | replace('-', '_') | replace('.py' , '') }}",
     "initial_version": "0.1.0",
     "copyright_year": "{% now 'local', '%Y' %}",
-    "use_travis": "y",
+    "use_drone": "y",
+    "use_travis": "n",
     "use_readthedocs": "y",
     "use_pypi": "y"
 }

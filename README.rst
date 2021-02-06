@@ -104,11 +104,13 @@ Using the Template
 
 - **copyright_year:** The current year.
 
+- **use_drone:** If ``y`` (yes), the package will have a hook file for `Drone <https://drone.dpi.inpe.br>`_ (``.drone.yml``).
+
 - **use_travis:** If ``y`` (yes), the package will have a hook file for `Travis CI <https://travis-ci.org/>`_ (``.travis.yml``).
 
 - **use_readthedocs:** If ``y`` (yes), the package will have a hook file for `Read the Docs  <https://readthedocs.org/>`_ (``.readthedocs.yml``).
 
-- **use_pypi:** If ``y`` (yes), the package will have a defined section in `Travis CI <https://travis-ci.org/>`_ hook file for deploying the package in the `Python Package Index <https://pypi.org/>`_.
+- **use_pypi:** If ``y`` (yes), the package will have a defined section in `Travis CI <https://travis-ci.org/>`_'s or `Drone <https://drone.dpi.inpe.br>`_'s hook file for deploying the package in the `Python Package Index <https://pypi.org/>`_.
 
 
 Some of the information above can be filled with default values::
@@ -127,7 +129,8 @@ Some of the information above can be filled with default values::
     package_name [wlts]:
     initial_version [0.1.0]:
     copyright_year [2020]:
-    use_travis [y]:
+    use_drone [y]:
+    use_travis [n]:
     use_readthedocs [y]:
     use_pypi [y]:
 

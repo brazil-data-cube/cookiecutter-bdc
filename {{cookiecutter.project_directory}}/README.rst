@@ -10,7 +10,7 @@
         :alt: Software License
 
 
-{% if cookiecutter.use_travis == 'y' -%}
+{% if cookiecutter.use_travis != 'n' -%}
 .. image:: https://travis-ci.org/{{ cookiecutter.github_repository }}.svg?branch=master
         :target: https://travis-ci.org/{{ cookiecutter.github_repository }}
         :alt: Build Status
@@ -18,6 +18,18 @@
 
 .. image:: https://coveralls.io/repos/github/{{ cookiecutter.github_repository }}/badge.svg?branch=master
         :target: https://coveralls.io/github/{{ cookiecutter.github_repository }}?branch=master
+        :alt: Code Coverage Test
+
+
+{% endif -%}
+{% if cookiecutter.use_drone == 'y' -%}
+.. image:: https://drone.dpi.inpe.br/api/badges/{{ cookiecutter.github_repository }}/status.svg
+        :target: https://drone.dpi.inpe.br/{{ cookiecutter.github_repository }}
+        :alt: Build Status
+
+
+.. image:: https://codecov.io/gh/{{ cookiecutter.github_repository }}/branch/master/graph/badge.svg
+        :target: https://codecov.io/gh/{{ cookiecutter.github_repository }}
         :alt: Code Coverage Test
 
 

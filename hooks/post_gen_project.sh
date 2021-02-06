@@ -49,12 +49,21 @@ echo "OK!"
 #
 # If Travis CI is not used, remove its hook file.
 #
-{%- if cookiecutter.use_travis != 'y' %}
+{%- if cookiecutter.use_travis == 'n' %}
 echo -n "Not using Travis CI... "
 rm .travis.yml
 echo "OK!"
 {%- endif %}
 
+
+#
+# If Drone is not used, remove its hook file.
+#
+{%- if cookiecutter.use_drone != 'y' %}
+echo -n "Not using Drone... "
+rm .travis.yml
+echo "OK!"
+{%- endif %}
 
 #
 # If Read the Docs is not used, remove its hook file.
