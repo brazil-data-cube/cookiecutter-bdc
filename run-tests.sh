@@ -9,6 +9,6 @@
 
 pydocstyle tests setup.py version.py && \
 isort setup.py version.py tests --check-only --diff && \
-check-manifest --ignore ".travis-*" --ignore ".readthedocs.*" && \
-sphinx-build -qnW --color -b doctest docs/sphinx/ docs/sphinx/_build/doctest #&& \
+check-manifest --ignore ".travis.yml,.drone.yml,.readthedocs.yml" && \
+sphinx-build -qnW --color -b doctest docs/sphinx/ docs/sphinx/_build/doctest && \
 pytest
