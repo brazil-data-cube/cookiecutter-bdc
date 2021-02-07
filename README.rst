@@ -45,7 +45,7 @@ About
 =====
 
 
-This `Cookiecutter template <https://github.com/cookiecutter/cookiecutter>`_ is designed to help you to bootstrap a new Python package for Brazil Data Cube software stack.
+This `Cookiecutter template <https://github.com/cookiecutter/cookiecutter>`_ is designed to help you to bootstrap a new Python package for the Brazil Data Cube software stack.
 
 
 Using the Template
