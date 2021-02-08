@@ -3,6 +3,10 @@
 """{{ cookiecutter.project_title }}."""
 
 {% if cookiecutter.project_flavour == 'Flask Web Service' -%}
+import os
+
+from flask import Flask
+
 from .ext import {{ cookiecutter.package_name | upper }}
 {%- endif %}
 from .version import __version__

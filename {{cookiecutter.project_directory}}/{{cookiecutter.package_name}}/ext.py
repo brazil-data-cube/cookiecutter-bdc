@@ -15,7 +15,7 @@ class {{ cookiecutter.package_name | upper }}:
 
     def init_app(self, app, **kwargs):
         """Initialize Flask application object."""
-        self.init_config(app)
+        self.init_config(app, kwargs)
         app.extensions['{{ cookiecutter.package_name }}'] = self
 
     def init_config(self, app, **kwargs):
