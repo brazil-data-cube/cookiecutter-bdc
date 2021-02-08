@@ -61,7 +61,7 @@ echo "OK!"
 #
 {%- if cookiecutter.use_drone != 'y' %}
 echo -n "Not using Drone... "
-rm .travis.yml
+rm .drone.yml
 echo "OK!"
 {%- endif %}
 
